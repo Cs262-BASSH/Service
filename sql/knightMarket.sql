@@ -1,3 +1,4 @@
+    -- delete Drop table commend after confirm
     DROP TABLE IF EXISTS userItem;
     DROP TABLE IF EXISTS users;
 
