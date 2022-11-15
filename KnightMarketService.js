@@ -48,6 +48,11 @@ router.put("/useritem/:id", UpdateUserItem);
 router.post('/useritem', createUseritem);
 router.delete('/useritem/:id', deleteUseritem);
 
+router.get("/useritem/category/:catnum", readUserItemByCat);
+
+
+
+
 router.get("/users", readUsers);
 router.get("/users/:id", readUser);
 router.put("/users/:id", UpdateUser);
@@ -93,7 +98,7 @@ function readHelloMessage(req, res) {
 }
 
 function readUserItem(req, res, next) {
-    db.oneOrNone('SELECT * FROM useritem WHERE userid=${userid}', req.params)
+    db.many('SELECT * FROM useritem WHERE userid=${userid}', req.params)
         .then(data => {
             returnDataOr404(res, data);
         })
@@ -131,6 +136,26 @@ function deleteUseritem(req, res, next) {
             next(err);
         });
 }
+
+
+
+
+
+
+
+router.get("/useritem/category/:catnum", readUserItemByCat);
+
+function readUserItemByCat(req, res, next) {
+    db.many('SELECT * FROM useritem WHERE categorynum=${catnum}', req.params)
+        .then(data => {
+            returnDataOr404(res, data);
+        })
+        .catch(err => {
+            next(err);
+        });
+}
+
+
 
 
 
