@@ -84,7 +84,7 @@ function returnDataOr404(res, data) {
 }
 
 function readHelloMessage(req, res) {
-    res.send('Hello, CS 262 Team baash Knight Market service!');
+    res.send('Welcome to Knight Market data service!');
 }
 
  function readUserItems(req, res, next) {
