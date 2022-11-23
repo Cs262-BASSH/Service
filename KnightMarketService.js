@@ -29,12 +29,15 @@ const db = pgp({
 });
 
 // Configure the server and its routes.
-
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const router = express.Router();
 router.use(express.json());
+
+// Create
+router.post('/useritem', createUseritem);
+router.post('/users', createUser);
 
 // Read
 router.get("/", readHelloMessage);
@@ -44,10 +47,6 @@ router.get("/useritem/category/:catnum", readUserItemByCat);
 router.get("/users", readUsers);
 router.get("/users/:id", readUser);
 
-// Create
-router.post('/useritem', createUseritem);
-router.post('/users', createUser);
-
 // Update
 router.put("/useritem/:id", UpdateUserItem);
 router.put("/users/:id", UpdateUser);
@@ -56,15 +55,11 @@ router.put("/users/:id", UpdateUser);
 router.delete('/useritem/:id', deleteUseritem);
 router.delete('/users/:id', deleteUser);
 
-
-
-
 app.use(router);
 app.use(errorHandler);
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // Implement the CRUD operations.
-
 function errorHandler(err, req, res) {
     if (app.get('env') === "development") {
         console.log(err);
@@ -134,14 +129,6 @@ function deleteUseritem(req, res, next) {
         });
 }
 
-
-
-
-
-
-
-router.get("/useritem/category/:catnum", readUserItemByCat);
-
 function readUserItemByCat(req, res, next) {
     db.many('SELECT * FROM useritem WHERE categorynum=${catnum}', req.params)
         .then(data => {
@@ -152,11 +139,6 @@ function readUserItemByCat(req, res, next) {
         });
 }
 
-
-
-
-
-
 function readUsers(req, res, next) {
     db.many("SELECT * FROM user")
         .then(data => {
@@ -166,8 +148,6 @@ function readUsers(req, res, next) {
             next(err);
         })
 }
-
-
 
 function readUser(req, res, next) {
     db.oneOrNone('SELECT * FROM user WHERE id=${id}', req.params)
