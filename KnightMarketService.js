@@ -28,38 +28,46 @@ const db = pgp({
     password: process.env.DB_PASSWORD
 });
 
+
+
+
+
 // Configure the server and its routes.
+
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const router = express.Router();
 router.use(express.json());
 
-// Create
-router.post('/useritem', createUseritem);
-router.post('/users', createUser);
-
-// Read
 router.get("/", readHelloMessage);
+
 router.get("/useritem", readUserItems);
 router.get("/useritem/:userid", readUserItem);
-router.get("/useritem/category/:catnum", readUserItemByCat);
-router.get("/users", readUsers);
-router.get("/users/:id", readUser);
-
-// Update
 router.put("/useritem/:id", UpdateUserItem);
-router.put("/users/:id", UpdateUser);
-
-// Delete
+router.post('/useritem', createUseritem);
 router.delete('/useritem/:id', deleteUseritem);
-router.delete('/users/:id', deleteUser);
+
+router.get("/useritem/category/:catnum", readUserItemByCat);
+
+
+
+
+router.get("/Marketusers", readMarketUsers);
+router.get("/Marketusers/:id", readMarketUser);
+router.put("/Marketusers/:id", UpdateMarketUser);
+router.post('/Marketusers', createMarketUser);
+router.delete('/Marketusers/:id', deleteMarketUser);
+
+
+
 
 app.use(router);
 app.use(errorHandler);
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // Implement the CRUD operations.
+
 function errorHandler(err, req, res) {
     if (app.get('env') === "development") {
         console.log(err);
@@ -76,10 +84,10 @@ function returnDataOr404(res, data) {
 }
 
 function readHelloMessage(req, res) {
-    res.send('Welcome to Knight Market data service!');
+    res.send('Hello, CS 262 Team baash Knight Market service!');
 }
 
-function readUserItems(req, res, next) {
+ function readUserItems(req, res, next) {
     db.many("SELECT * FROM useritem")
         .then(data => {
             res.send(data);
@@ -110,7 +118,7 @@ function UpdateUserItem(req, res, next) {
 }
 
 function createUseritem(req, res, next) {
-    db.one('INSERT INTO useritem(userid, name, time, categorynum, price,description,imageurl) VALUES (${userid}, ${name} , ${time} , ${categorynum},${price},${description},${imageurl}) RETURNING id', req.body)
+    db.one('INSERT INTO useritem(userid, name, time, categorynum, price,description,imageurl) VALUES (${userid}, ${name}, ${time} , ${categorynum},${price},${description},${imageurl}) RETURNING id', req.body)
         .then(data => {
             res.send(data);
         })
@@ -129,6 +137,14 @@ function deleteUseritem(req, res, next) {
         });
 }
 
+
+
+
+
+
+
+router.get("/useritem/category/:catnum", readUserItemByCat);
+
 function readUserItemByCat(req, res, next) {
     db.many('SELECT * FROM useritem WHERE categorynum=${catnum}', req.params)
         .then(data => {
@@ -139,8 +155,13 @@ function readUserItemByCat(req, res, next) {
         });
 }
 
-function readUsers(req, res, next) {
-    db.many("SELECT * FROM user")
+
+
+
+
+
+ function readMarketUsers(req, res, next) {
+    db.many("SELECT * FROM users")
         .then(data => {
             res.send(data);
         })
@@ -149,8 +170,10 @@ function readUsers(req, res, next) {
         })
 }
 
-function readUser(req, res, next) {
-    db.oneOrNone('SELECT * FROM user WHERE id=${id}', req.params)
+
+
+function readMarketUser(req, res, next) {
+    db.oneOrNone('SELECT * FROM users WHERE id=${id}', req.params)
         .then(data => {
             returnDataOr404(res, data);
         })
@@ -159,8 +182,8 @@ function readUser(req, res, next) {
         });
 }
 
-function UpdateUser(req, res, next) {
-    db.oneOrNone('UPDATE useritem SET email=${body.email}, name=${body.name}, password=${body.password}, phonenum=${body.phonenum} WHERE id=${params.id} RETURNING id', req)
+function UpdateMarketUser(req, res, next) {
+    db.oneOrNone('UPDATE users SET email=${body.email}, name=${body.name}, password=${body.password}, phonenum=${body.phonenum} WHERE id=${params.id} RETURNING id', req)
         .then(data => {
             returnDataOr404(res, data);
         })
@@ -169,8 +192,8 @@ function UpdateUser(req, res, next) {
         });
 }
 
-function createUser(req, res, next) {
-    db.one('INSERT INTO useritem(email, name, password, phonenum) VALUES (${email}, ${name} , ${password} , ${phonenum}) RETURNING id', req.body)
+function createMarketUser(req, res, next) {
+    db.one('INSERT INTO users(email, name, password, phonenum) VALUES (${email}, ${name} , ${password} , ${phonenum}) RETURNING id', req.body)
         .then(data => {
             res.send(data);
         })
@@ -179,8 +202,8 @@ function createUser(req, res, next) {
         });
 }
 
-function deleteUser(req, res, next) {
-    db.oneOrNone('DELETE FROM useritem WHERE id=${id} RETURNING id', req.params)
+function deleteMarketUser(req, res, next) {
+    db.oneOrNone('DELETE FROM users WHERE id=${id} RETURNING id', req.params)
         .then(data => {
             returnDataOr404(res, data);
         })
