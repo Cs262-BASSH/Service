@@ -1,21 +1,11 @@
 /**
- * This module implements a REST-inspired webservice for the Monopoly DB.
+ * This module implements a REST-inspired webservice for the KnightMarket DB.
  * The database is hosted on ElephantSQL.
  *
- * Currently, the service supports the player table only.
- *
- * To guard against SQL injection attacks, this code uses pg-promise's built-in
- * variable escaping. This prevents a client from issuing this URL:
- *     https://cs262-monopoly-service.herokuapp.com/players/1%3BDELETE%20FROM%20PlayerGame%3BDELETE%20FROM%20Player
- * which would delete records in the PlayerGame and then the Player tables.
- * In particular, we don't use JS template strings because it doesn't filter
- * client-supplied values properly.
- *
- * TODO: Consider using Prepared Statements.
- *      https://vitaly-t.github.io/pg-promise/PreparedStatement.html
  *
  * @author: kvlinden
- * @date: Summer, 2020
+ * @adapted by: Team BASSH
+ * @date: Fall, 2022
  */
 
 // Set up the database connection.
@@ -67,6 +57,7 @@ function errorHandler(err, req, res) {
     res.sendStatus(err.status || 500);
 }
 
+//return error message if there is no data to present
 function returnDataOr404(res, data) {
     if (data == null) {
         res.sendStatus(404);
@@ -75,10 +66,12 @@ function returnDataOr404(res, data) {
     }
 }
 
+//display welcome message on default page 
 function readHelloMessage(req, res) {
     res.send('Welcome to Knight Market data service!');
 }
 
+//Read all items
 function readUserItems(req, res, next) {
     db.many("SELECT * FROM useritem")
         .then(data => {
@@ -89,6 +82,7 @@ function readUserItems(req, res, next) {
         })
 }
 
+//Read select items
 function readUserItem(req, res, next) {
     db.many('SELECT * FROM useritem WHERE userid=${userid}', req.params)
         .then(data => {
@@ -99,6 +93,7 @@ function readUserItem(req, res, next) {
         });
 }
 
+//Update item with new information in fields
 function UpdateUserItem(req, res, next) {
     db.oneOrNone('UPDATE useritem SET userid=${body.userid},name=${body.name},time=${body.time}, categorynum=${body.categorynum}, price=${body.price}, description=${body.description}, imageurl=${body.imageurl} WHERE id=${params.id} RETURNING id', req)
         .then(data => {
@@ -109,6 +104,7 @@ function UpdateUserItem(req, res, next) {
         });
 }
 
+//Create an item instance in database
 function createUseritem(req, res, next) {
     db.one('INSERT INTO useritem(userid, name, time, categorynum, price,description,imageurl) VALUES (${userid}, ${name} , ${time} , ${categorynum},${price},${description},${imageurl}) RETURNING id', req.body)
         .then(data => {
@@ -119,6 +115,7 @@ function createUseritem(req, res, next) {
         });
 }
 
+//Delete a user instance in database
 function deleteUseritem(req, res, next) {
     db.oneOrNone('DELETE FROM useritem WHERE id=${id} RETURNING id', req.params)
         .then(data => {
@@ -129,6 +126,7 @@ function deleteUseritem(req, res, next) {
         });
 }
 
+//Display items in certain category
 function readUserItemByCat(req, res, next) {
     db.many('SELECT * FROM useritem WHERE categorynum=${catnum}', req.params)
         .then(data => {
@@ -149,6 +147,7 @@ function readUsers(req, res, next) {
         })
 }
 
+//Select a certain user
 function readUser(req, res, next) {
     db.oneOrNone('SELECT * FROM user WHERE id=${id}', req.params)
         .then(data => {
@@ -159,6 +158,7 @@ function readUser(req, res, next) {
         });
 }
 
+//Update a certain user's fields with new information
 function UpdateUser(req, res, next) {
     db.oneOrNone('UPDATE useritem SET email=${body.email}, name=${body.name}, password=${body.password}, phonenum=${body.phonenum} WHERE id=${params.id} RETURNING id', req)
         .then(data => {
@@ -169,6 +169,7 @@ function UpdateUser(req, res, next) {
         });
 }
 
+//Create a user instance in database
 function createUser(req, res, next) {
     db.one('INSERT INTO useritem(email, name, password, phonenum) VALUES (${email}, ${name} , ${password} , ${phonenum}) RETURNING id', req.body)
         .then(data => {
@@ -179,6 +180,7 @@ function createUser(req, res, next) {
         });
 }
 
+//Delete a certain user from database
 function deleteUser(req, res, next) {
     db.oneOrNone('DELETE FROM useritem WHERE id=${id} RETURNING id', req.params)
         .then(data => {
