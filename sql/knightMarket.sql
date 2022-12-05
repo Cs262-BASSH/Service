@@ -71,7 +71,7 @@
 
     INSERT INTO userItem VALUES (1, '2006-06-27 08:00:00', 4, 180, 'xbox in working order', 'https://tse1.mm.bing.net/th?id=OIP.Rg2x5XoYQVbIj0y7Jgw7yAHaEg&pid=Api&P=0' ) ;
 
-    INSERT INTO userItem VALUES (8, ‘2010-05-27 08:00:00', 5, 145, 'legacy laptop', 'https://tse1.mm.bing.net/th?id=OIP.rgsPredS4vrVoteY2kqFUQHaJ4&pid=Api&P=0' ) ;
+    INSERT INTO userItem VALUES (8, '2010-05-27 08:00:00', 5, 145, 'legacy laptop', 'https://tse1.mm.bing.net/th?id=OIP.rgsPredS4vrVoteY2kqFUQHaJ4&pid=Api&P=0' ) ;
 
     INSERT INTO userItem VALUES (9, '2009-06-27 08:00:00', 6, 450, 'expensive sofa, like new, 'https://tse1.mm.bing.net/th?id=OIP.pMkwm1FE6YPf5m8cCnB-ZgHaGO&pid=Api&P=0’) ;
 
@@ -85,20 +85,20 @@
 
     INSERT INTO userItem VALUES (1, '2006-06-27 08:00:00', 4, 40, 'high tech coffee maker', 'https://tse2.mm.bing.net/th?id=OIP.O5PEVhER1z9ASi6LzIBlVQHaHa&pid=Api&P=0' ) ;
 
-    INSERT INTO userItem VALUES (1, '2006-06-27 08:00:00', 4, 55, 'measuring scale', 'https://tse3.mm.bing.net/th?id=OIP.WNUzmFi3lrhXs49OEPJZJgHaHa&pid=Api&P=0’); 
+    INSERT INTO userItem VALUES (1, '2006-06-27 08:00:00', 4, 55, 'measuring scale', 'https://tse3.mm.bing.net/th?id=OIP.WNUzmFi3lrhXs49OEPJZJgHaHa&pid=Api&P=0'); 
 
-    INSERT INTO userItem VALUES (1, '2006-06-27 08:00:00', 4, 90, 'pressure cooker, 'https://tse1.mm.bing.net/th?id=OIP.is_keQCjlVncnbzh7RKN0AHaII&pid=Api&P=0’) ;
+    INSERT INTO userItem VALUES (1, '2006-06-27 08:00:00', 4, 90, 'pressure cooker, 'https://tse1.mm.bing.net/th?id=OIP.is_keQCjlVncnbzh7RKN0AHaII&pid=Api&P=0') ;
 
-    INSERT INTO userItem VALUES (1, '2006-06-27 08:00:00', 4, 60, ‘industrial standard mixer’, 'https://tse3.mm.bing.net/th?id=OIP.xQqiiR78wvRnq0oe6Y9A6gHaHX&pid=Api&P=0) ;
+    INSERT INTO userItem VALUES (1, '2006-06-27 08:00:00', 4, 60, ‘industrial standard mixer’, 'https://tse3.mm.bing.net/th?id=OIP.xQqiiR78wvRnq0oe6Y9A6gHaHX&pid=Api&P=0') ;
 
-    INSERT INTO userItem VALUES (8, ‘2010-05-27 08:00:00', 5, 270, 'full gaming setup', 'https://tse1.mm.bing.net/th?id=OIP.ndrUOCNwDav4J2gvcF57NwHaHa&pid=Api&P=0' ) ;
+    INSERT INTO userItem VALUES (8, '2010-05-27 08:00:00', 5, 270, 'full gaming setup', 'https://tse1.mm.bing.net/th?id=OIP.ndrUOCNwDav4J2gvcF57NwHaHa&pid=Api&P=0' ) ;
 
     INSERT INTO userItem VALUES (9, '2009-06-27 08:00:00', 6, 265, 'velvet loveseat', 'https://tse2.mm.bing.net/th?id=OIP.1kNsldthEblUHDZ8c7Cp6QHaE8&pid=Api&P=0' ) ;
 
     INSERT INTO userItem VALUES (5, '2006-08-27 08:00:00', 7, 50, 'Computer science C++ textbook', 'https://tse1.mm.bing.net/th?id=OIP.1jRwP0MWOX9YjzykVAES-wAAAA&pid=Api&P=0' ) ;
 
-    INSERT INTO userItem VALUES (5, '2006-08-27 08:00:00', 7, 15, 'cute plant', 'https://tse2.mm.bing.net/th?id=OIP.OwTXk2H_46H302u0v3sYewHaHs&pid=Api&P=0’) ;
+    INSERT INTO userItem VALUES (5, '2006-08-27 08:00:00', 7, 15, 'cute plant', 'https://tse2.mm.bing.net/th?id=OIP.OwTXk2H_46H302u0v3sYewHaHs&pid=Api&P=0') ;
 
-    INSERT INTO userItem VALUES (5, '2006-08-27 08:00:00', 7, 35, 'mason jar set', 'https://tse1.mm.bing.net/th?id=OIP.ICsYU44uCRJ1ELzwWj-8cgHaFj&pid=Api&rs=1&c=1&qlt=95&w=144&h=108’) ;
-    INSERT INTO userItem VALUES (5, '2006-08-27 08:00:00', 7, 28, 'used backpack', 'https://tse1.mm.bing.net/th?id=OIP.Bp4FVWIm0gm8TV4jWfH95gHaLH&pid=Api&P=0’) ;
+    INSERT INTO userItem VALUES (5, '2006-08-27 08:00:00', 7, 35, 'mason jar set', 'https://tse1.mm.bing.net/th?id=OIP.ICsYU44uCRJ1ELzwWj-8cgHaFj&pid=Api&rs=1&c=1&qlt=95&w=144&h=108') ;
+    INSERT INTO userItem VALUES (5, '2006-08-27 08:00:00', 7, 28, 'used backpack', 'https://tse1.mm.bing.net/th?id=OIP.Bp4FVWIm0gm8TV4jWfH95gHaLH&pid=Api&P=0') ;
 
