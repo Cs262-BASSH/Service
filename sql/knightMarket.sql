@@ -41,15 +41,22 @@
 
 
     -- Add sample records.
-    INSERT INTO users(email, name, phoneNum) VALUES ('sad@gamilc.om', 'Daniel', '7031512512');
-    INSERT INTO users(email, name, phoneNum) VALUES ('asf@gamilc.om', 'Kwon', '730231928');
+    INSERT INTO users VALUES (1, 'sad@gmail.com', 'Daniel', 'joeymai', '7031512512');
+    INSERT INTO users VALUES (2, 'gw3@gmail.com', 'Ginny', 'charmander', '7036112512');
+    INSERT INTO users VALUES (3, 'll8@gmail.com', 'Luna', 'squirtle', '7031577512');
+    INSERT INTO users VALUES (4, 'tn4@gmail.com', 'Theodore', 'kingkong', '7031512882');
+    INSERT INTO users VALUES (5, 'rw1@gmail.com', 'Ronald', 'gardevoir', '7031512512');
+    INSERT INTO users VALUES (6, 'bz9@gmail.com', 'Blaise', 'skittles', '7031558512');
+    INSERT INTO users VALUES (7, 'hg16@gmail.com', 'Hermione', 'joemamas', '7095512512');
+    INSERT INTO users VALUES (8, 'hjp@gmail.com', 'Harry', 'haribo', '7031510012');
+    INSERT INTO users VALUES (9, 'dm11@gmail.com', 'Draco', 'dracomalfoy', '7341512512');
 
 
     INSERT INTO userItem VALUES (1, 'Cute lamp', '2006-06-27 08:00:00', 1, 50, 'a nice lamp, like new', 'https://tse4.mm.bing.net/th?id=OIP.EbYmxg_tZuqNed4AVC-E5AHaLt&pid=Api&P=0' );
 
     INSERT INTO userItem VALUES (2, 'Moon lamp', '2007-06-27 08:00:00', 1, 70, 'floating moon lamp', 'https://tse1.mm.bing.net/th?id=OIP.svOGhGHraEX8rvOywC_GtAHaHa&pid=Api&rs=1&c=1&qlt=95&w=122&h=122' );
 
-    INSERT INTO userItem VALUES (1, 'Gaming chair', '2006-06-17 08:00:00', 2, 150, 'comfortable gaming chair', 'https://tse3.mm.bing.net/th?id=OIP.ck8jF-QBqAWKTjKiCE7BpQHaHa&pid=Api&P=0' ); 
+    INSERT INTO userItem VALUES (7, 'Gaming chair', '2006-06-17 08:00:00', 2, 150, 'comfortable gaming chair', 'https://tse3.mm.bing.net/th?id=OIP.ck8jF-QBqAWKTjKiCE7BpQHaHa&pid=Api&P=0' ); 
 
     INSERT INTO userItem VALUES (2, 'Standing Desk', '2006-12-27 08:00:00', 3, 90, 'standing desk that’s good for your back', 'https://tse1.mm.bing.net/th?id=OIP.ErIpt7tvXtNQIB_nw50snwHaHa&pid=Api&P=0' ) ;
 
@@ -59,7 +66,7 @@
 
     INSERT INTO userItem VALUES (9, 'Sofa', '2009-06-27 08:00:00', 6, 450, 'expensive sofa, like new', 'https://tse1.mm.bing.net/th?id=OIP.pMkwm1FE6YPf5m8cCnB-ZgHaGO&pid=Api&P=0') ;
 
-    INSERT INTO userItem VALUES (5, 'Manga', '2006-08-27 08:00:00', 7, 150, 'naruto boxset', 'https://tse3.mm.bing.net/th?id=OIP.wVNA5dPbTSHGnm4LFu3vkQHaHa&pid=Api&P=0' ) ;
+    INSERT INTO userItem VALUES (6, 'Manga', '2006-08-27 08:00:00', 7, 150, 'naruto boxset', 'https://tse3.mm.bing.net/th?id=OIP.wVNA5dPbTSHGnm4LFu3vkQHaHa&pid=Api&P=0' ) ;
 
     INSERT INTO userItem VALUES (2, 'Twin lamps', '2007-06-27 08:00:00', 1, 75, 'twin lamps', 'https://tse2.mm.bing.net/th?id=OIP.81iPowM7AA4ClJ83qmTmKgHaHa&pid=Api&P=0' ) ;
 
@@ -71,7 +78,7 @@
 
     INSERT INTO userItem VALUES (1, 'Scale', '2006-06-27 08:00:00', 4, 55, 'measuring scale', 'https://tse3.mm.bing.net/th?id=OIP.WNUzmFi3lrhXs49OEPJZJgHaHa&pid=Api&P=0'); 
 
-    INSERT INTO userItem VALUES (1, 'Pressure cooker', '2006-06-27 08:00:00', 4, 90, 'pressure cooker', 'https://tse1.mm.bing.net/th?id=OIP.is_keQCjlVncnbzh7RKN0AHaII&pid=Api&P=0') ;
+    INSERT INTO userItem VALUES (4, 'Pressure cooker', '2006-06-27 08:00:00', 4, 90, 'pressure cooker', 'https://tse1.mm.bing.net/th?id=OIP.is_keQCjlVncnbzh7RKN0AHaII&pid=Api&P=0') ;
 
     INSERT INTO userItem VALUES (1, 'Mixer', '2006-06-27 08:00:00', 4, 60, 'industrial standard mixer', 'https://tse3.mm.bing.net/th?id=OIP.xQqiiR78wvRnq0oe6Y9A6gHaHX&pid=Api&P=0') ;
 
@@ -83,6 +90,6 @@
 
     INSERT INTO userItem VALUES (5, 'Plant', '2006-08-27 08:00:00', 7, 15, 'cute plant', 'https://tse2.mm.bing.net/th?id=OIP.OwTXk2H_46H302u0v3sYewHaHs&pid=Api&P=0') ;
 
-    INSERT INTO userItem VALUES (5, 'Mason jar', '2006-08-27 08:00:00', 7, 35, 'mason jar set', 'https://tse1.mm.bing.net/th?id=OIP.ICsYU44uCRJ1ELzwWj-8cgHaFj&pid=Api&rs=1&c=1&qlt=95&w=144&h=108') ;
+    INSERT INTO userItem VALUES (3, 'Mason jar', '2006-08-27 08:00:00', 7, 35, 'mason jar set', 'https://tse1.mm.bing.net/th?id=OIP.ICsYU44uCRJ1ELzwWj-8cgHaFj&pid=Api&rs=1&c=1&qlt=95&w=144&h=108') ;
     INSERT INTO userItem VALUES (5, 'Backpack', '2006-08-27 08:00:00', 7, 28, 'used backpack', 'https://tse1.mm.bing.net/th?id=OIP.Bp4FVWIm0gm8TV4jWfH95gHaLH&pid=Api&P=0') ;
 
