@@ -57,7 +57,7 @@
 
     INSERT INTO userItem VALUES (8, 'Old laptop', '2010-05-27 08:00:00', 5, 145, 'legacy laptop', 'https://tse1.mm.bing.net/th?id=OIP.rgsPredS4vrVoteY2kqFUQHaJ4&pid=Api&P=0' ) ;
 
-    INSERT INTO userItem VALUES (9, 'Sofa', '2009-06-27 08:00:00', 6, 450, 'expensive sofa, like new, 'https://tse1.mm.bing.net/th?id=OIP.pMkwm1FE6YPf5m8cCnB-ZgHaGO&pid=Api&P=0’) ;
+    INSERT INTO userItem VALUES (9, 'Sofa', '2009-06-27 08:00:00', 6, 450, 'expensive sofa, like new', 'https://tse1.mm.bing.net/th?id=OIP.pMkwm1FE6YPf5m8cCnB-ZgHaGO&pid=Api&P=0’) ;
 
     INSERT INTO userItem VALUES (5, 'Manga set', '2006-08-27 08:00:00', 7, 150, 'naruto boxset', 'https://tse3.mm.bing.net/th?id=OIP.wVNA5dPbTSHGnm4LFu3vkQHaHa&pid=Api&P=0' ) ;
 
