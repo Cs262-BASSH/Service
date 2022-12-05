@@ -87,7 +87,7 @@
 
     INSERT INTO userItem VALUES (1, '2006-06-27 08:00:00', 4, 55, 'measuring scale', 'https://tse3.mm.bing.net/th?id=OIP.WNUzmFi3lrhXs49OEPJZJgHaHa&pid=Api&P=0'); 
 
-    INSERT INTO userItem VALUES (1, '2006-06-27 08:00:00', 4, 90, 'pressure cooker, 'https://tse1.mm.bing.net/th?id=OIP.is_keQCjlVncnbzh7RKN0AHaII&pid=Api&P=0') ;
+    INSERT INTO userItem VALUES (1, '2006-06-27 08:00:00', 4, 90, 'pressure cooker', 'https://tse1.mm.bing.net/th?id=OIP.is_keQCjlVncnbzh7RKN0AHaII&pid=Api&P=0') ;
 
     INSERT INTO userItem VALUES (1, '2006-06-27 08:00:00', 4, 60, 'industrial standard mixer', 'https://tse3.mm.bing.net/th?id=OIP.xQqiiR78wvRnq0oe6Y9A6gHaHX&pid=Api&P=0') ;
 
