@@ -59,9 +59,9 @@
 
     INSERT INTO userItem VALUES (9, 'Sofa', '2009-06-27 08:00:00', 6, 450, 'expensive sofa, like new', 'https://tse1.mm.bing.net/th?id=OIP.pMkwm1FE6YPf5m8cCnB-ZgHaGO&pid=Api&P=0’) ;
 
-    INSERT INTO userItem VALUES (5, 'Manga set', '2006-08-27 08:00:00', 7, 150, 'naruto boxset', 'https://tse3.mm.bing.net/th?id=OIP.wVNA5dPbTSHGnm4LFu3vkQHaHa&pid=Api&P=0' ) ;
+    INSERT INTO userItem VALUES (5, 'Manga box', '2006-08-27 08:00:00', 7, 150, 'naruto boxset', 'https://tse3.mm.bing.net/th?id=OIP.wVNA5dPbTSHGnm4LFu3vkQHaHa&pid=Api&P=0' ) ;
 
-    INSERT INTO userItem VALUES (2, 'Twin lamps', '2007-06-27 08:00:00', 1, 75, 'twin lamp set', 'https://tse2.mm.bing.net/th?id=OIP.81iPowM7AA4ClJ83qmTmKgHaHa&pid=Api&P=0' ) ;
+    INSERT INTO userItem VALUES (2, 'Twin lamps', '2007-06-27 08:00:00', 1, 75, 'twin lamps', 'https://tse2.mm.bing.net/th?id=OIP.81iPowM7AA4ClJ83qmTmKgHaHa&pid=Api&P=0' ) ;
 
     INSERT INTO userItem VALUES (1, 'Good Chair', '2006-06-17 08:00:00', 2, 350, 're-upholstered chair', 'https://tse1.mm.bing.net/th?id=OIP.I4jtMYxllVGU7i9rwgmNuwHaJ4&pid=Api&P=0' ) ;
 
