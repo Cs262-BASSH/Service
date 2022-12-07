@@ -1,22 +1,4 @@
-/**
- * This module implements a REST-inspired webservice for the Monopoly DB.
- * The database is hosted on ElephantSQL.
- *
- * Currently, the service supports the player table only.
- *
- * To guard against SQL injection attacks, this code uses pg-promise's built-in
- * variable escaping. This prevents a client from issuing this URL:
- *     https://cs262-monopoly-service.herokuapp.com/players/1%3BDELETE%20FROM%20PlayerGame%3BDELETE%20FROM%20Player
- * which would delete records in the PlayerGame and then the Player tables.
- * In particular, we don't use JS template strings because it doesn't filter
- * client-supplied values properly.
- *
- * TODO: Consider using Prepared Statements.
- *      https://vitaly-t.github.io/pg-promise/PreparedStatement.html
- *
- * @author: kvlinden
- * @date: Summer, 2020
- */
+
 
 // Set up the database connection.
 const pgp = require('pg-promise')();
@@ -58,7 +40,7 @@ router.get("/Marketusers/:id", readMarketUser);
 router.put("/Marketusers/:id", UpdateMarketUser);
 router.post('/Marketusers', createMarketUser);
 router.delete('/Marketusers/:id', deleteMarketUser);
-
+router.get("/Marketusers/:email/:password", findMarketUser);
 
 
 
@@ -182,8 +164,26 @@ function readMarketUser(req, res, next) {
         });
 }
 
+
+
+
+function findMarketUser(req, res, next) {
+    db.oneOrNone('SELECT * FROM users WHERE email=${email} AND password=${password}' , req.params)
+        .then(data => {
+            returnDataOr404(res, data);
+        })
+        .catch(err => {
+            next(err);
+        });
+}
+
+
+
+
+
+
 function UpdateMarketUser(req, res, next) {
-    db.oneOrNone('UPDATE users SET email=${body.email}, name=${body.name}, password=${body.password}, phonenum=${body.phonenum} WHERE id=${params.id} RETURNING id', req)
+    db.oneOrNone('UPDATE users SET phonenum=${body.phonenum} WHERE id=${params.id} RETURNING id', req)
         .then(data => {
             returnDataOr404(res, data);
         })
