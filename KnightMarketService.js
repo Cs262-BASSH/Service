@@ -70,7 +70,7 @@ function readHelloMessage(req, res) {
 }
 
  function readUserItems(req, res, next) {
-    db.many("SELECT * FROM useritem")
+    db.many("SELECT * FROM useritem ORDER BY time DESC")
         .then(data => {
             res.send(data);
         })
