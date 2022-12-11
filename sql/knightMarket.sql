@@ -42,7 +42,7 @@
 
 
     -- Add sample records.
-    INSERT INTO users(email, name, password, phoneNum) VALUES ('sad@gmail.com', 'Daniel', 'joeymai', '7031512512');
+    INSERT INTO users(email, name, password, phoneNum) VALUES ('sad@gmail.com', 'Daniel', 'joeymai', '6165267111');
     INSERT INTO users(email, name, password, phoneNum) VALUES ('gw3@gmail.com', 'Ginny', 'charmander', '7036112512');
     INSERT INTO users(email, name, password, phoneNum) VALUES ( 'll8@gmail.com', 'Luna', 'squirtle', '7031577512');
     INSERT INTO users(email, name, password, phoneNum) VALUES ('tn4@gmail.com', 'Theodore', 'kingkong', '7031512882');
