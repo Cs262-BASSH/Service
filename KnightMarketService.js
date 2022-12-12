@@ -1,3 +1,4 @@
+
 /**
  * This module implements a REST-inspired webservice for the KnightMarket DB.
  * The database is hosted on ElephantSQL.
@@ -48,7 +49,7 @@ router.get("/Marketusers/:id", readMarketUser);
 router.put("/Marketusers/:id", UpdateMarketUser);
 router.post('/Marketusers', createMarketUser);
 router.delete('/Marketusers/:id', deleteMarketUser);
-
+router.get("/Marketusers/:email/:password", findMarketUser);
 
 
 
@@ -79,9 +80,8 @@ function readHelloMessage(req, res) {
     res.send('Hello, CS 262 Team baash Knight Market service!');
 }
 
-//Read all items
-function readUserItems(req, res, next) {
-    db.many("SELECT * FROM useritem")
+ function readUserItems(req, res, next) {
+    db.many("SELECT * FROM useritem ORDER BY id DESC")
         .then(data => {
             res.send(data);
         })
@@ -177,9 +177,23 @@ function readMarketUser(req, res, next) {
 }
 
 
-//Update a certain user's fields with new information
+
+
+
+function findMarketUser(req, res, next) {
+    db.oneOrNone('SELECT * FROM users WHERE email=${email} AND password=${password}' , req.params)
+        .then(data => {
+            returnDataOr404(res, data);
+        })
+        .catch(err => {
+            next(err);
+        });
+}
+
+
+
 function UpdateMarketUser(req, res, next) {
-    db.oneOrNone('UPDATE users SET email=${body.email}, name=${body.name}, password=${body.password}, phonenum=${body.phonenum} WHERE id=${params.id} RETURNING id', req)
+    db.oneOrNone('UPDATE users SET phonenum=${body.phonenum} WHERE id=${params.id} RETURNING id', req)
         .then(data => {
             returnDataOr404(res, data);
         })
